@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+  labels:
+    app: myapp
+    type: front-end
+
+spec:
+  template:
+    metadata:
+      name: my-app-pod
+      labels:
+        app: my-app
+        type: front-end # or back-end
+    spec:
+      containers: # it is a list
+        - name: nginx-container
+          image: nginx
+  replicas: 3
+  selector:   # which pods fall another it. Replica Set can manage pod that are not created of part of replica creation
+    matchLabels:
+      type: front-end
