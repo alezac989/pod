@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-app-pod
+  labels:
+    app: my-app
+    type: front-end # or back-end
+
+spec:
+  containers: # it is a list
+    - name: nginx-container
+      image: nginx
+      # inject config map in pod:
+      # 1 ENV
+      envFrom:
+        - configMapRef:
+            name: app-config
+      # 2 Single ENV
+      env:
+        - name: APP_COLOR
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: APP_COLOR
+      # 3 VOLUME
+      volumes:
+      - name: app-config-volume
+        configMap:
+          name: app-config
