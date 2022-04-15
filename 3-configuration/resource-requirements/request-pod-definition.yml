@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-app
+spec:
+  containers:
+    - name: web-app
+      image: web-app
+      ports:
+        - containerPort: 8080
+      resources:
+        requests:
+          memory: "1Gi" #256mi or 268435456 or 1G
+          cpu: 1 # min is 0.1 or 1m
