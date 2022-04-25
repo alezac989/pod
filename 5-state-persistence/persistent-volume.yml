@@ -7,6 +7,7 @@ spec:
     - ReadWriteOnce #  ReadOnlyMany, ReadWriteOnce, ReadWriteMany
   capacity:
     storage: 1Gi
+  persistentVolumeReclaimPolicy: Reatin # or Delete or Recycle
 
   hostPath: # not be used in a prod env
     path: /tmp/data
