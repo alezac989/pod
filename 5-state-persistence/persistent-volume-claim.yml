@@ -6,5 +6,5 @@ spec:
   accessMode:
     - ReadWriteOnce
   resources:
-    requestS:
+    requests:
       storage: 500Mi
