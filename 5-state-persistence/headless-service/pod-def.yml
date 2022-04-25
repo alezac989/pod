@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-app
+  labeles:
+    app: mysql
+spec:
+  containers:
+    - name: mysql
+      image: mysql
+  subdomain: mysql-h
+  hostname: mysql-pod # to create a DNS record for the pod
