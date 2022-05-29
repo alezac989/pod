@@ -9,7 +9,7 @@ spec:
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoreDuringExecution:
-        nodeSelectorTer,s:
+        nodeSelectorTerms:
           - matchExpressions:
               - key: size
                 operator: Exists
